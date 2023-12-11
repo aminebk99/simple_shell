@@ -8,7 +8,7 @@
  */
 int _putchar(int fd, char c)
 {
-    return (write(fd, &c, 1));
+return (write(fd, &c, 1));
 }
 
 
@@ -20,11 +20,11 @@ int _putchar(int fd, char c)
  */
 int _strlenc(const char *s)
 {
-    int c = 0;
+int c = 0;
 
-    while (s[c] != '\0')
-    {
-        c++;
-    }
-    return (c);
+while (s[c] != '\0')
+{
+c++;
+}
+return (c);
 }

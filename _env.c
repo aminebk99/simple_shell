@@ -7,12 +7,12 @@
  */
 void env(void)
 {
-    char **envp;
+char **envp;
 
-    envp = __environ;
-    while (*envp)
-    {
-        _printf(1, "%s\n", *envp);
-        envp++;
-    }
+envp = __environ;
+while (*envp)
+{
+_printf(1, "%s\n", *envp);
+envp++;
+}
 }

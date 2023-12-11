@@ -6,7 +6,7 @@
  */
 int _isspace(char c)
 {
-    return (c == ' ' || c == '\t');
+return (c == ' ' || c == '\t');
 }
 /**
  * parse_input - Tokenizes the input string and stores the tokens in args array
@@ -15,25 +15,25 @@ int _isspace(char c)
  */
 void parse_input(char *input, char **args)
 {
-    int i = 0;
-    char *str;
+int i = 0;
+char *str;
 
-    str = input;
-    while (_isspace(*input) && *input)
-        input++;
+str = input;
+while (_isspace(*input) && *input)
+input++;
 
-    if (!*input || *input == '\n')
-    {
-        free(str);
-        args[0] = NULL;
-        return;
-    }
-    args[i] = strdup(strtok(input, "\t \n"));
-    while (args[i] != NULL && i < MAX_ARGS - 1)
-    {
-        i++;
-        args[i] = strtok(NULL, "\t \n");
-    }
-    args[i] = NULL;
-    free(str);
+if (!*input || *input == '\n')
+{
+free(str);
+args[0] = NULL;
+return;
+}
+args[i] = strdup(strtok(input, "\t \n"));
+while (args[i] != NULL && i < MAX_ARGS - 1)
+{
+i++;
+args[i] = strtok(NULL, "\t \n");
+}
+args[i] = NULL;
+free(str);
 }

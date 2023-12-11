@@ -7,27 +7,27 @@
  */
 int cmd_helper(char **pathsp, char **splitted)
 {
-    int i = 0;
-    char *full_cmd;
-    struct stat st;
+int i = 0;
+char *full_cmd;
+struct stat st;
 
-    while (pathsp[i])
-    {
-        full_cmd = _combine_path(pathsp[i], splitted[0]);
-        if (stat(full_cmd, &st) == 0)
-        {
-            execute_command(full_cmd, splitted);
-            free(full_cmd);
-            free_2d_array(pathsp);
-            free_2d_array(splitted);
-            return (EXIT_SUCCESS);
-        }
-        i++;
-        free(full_cmd);
-    }
-    _printf(2, "command not found\n");
-    exit_status(1, 127);
-    free_2d_array(pathsp);
-    free_2d_array(splitted);
-    return (EXIT_FAILURE);
+while (pathsp[i])
+{
+full_cmd = _combine_path(pathsp[i], splitted[0]);
+if (stat(full_cmd, &st) == 0)
+{
+execute_command(full_cmd, splitted);
+free(full_cmd);
+free_2d_array(pathsp);
+free_2d_array(splitted);
+return (EXIT_SUCCESS);
+}
+i++;
+free(full_cmd);
+}
+_printf(2, "command not found\n");
+exit_status(1, 127);
+free_2d_array(pathsp);
+free_2d_array(splitted);
+return (EXIT_FAILURE);
 }
