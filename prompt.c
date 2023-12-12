@@ -5,6 +5,6 @@
  */
 void prompt(void)
 {
-	if (isatty(0)
+	if (isatty(0))
 		write(1, "$ ", 2);
 }
