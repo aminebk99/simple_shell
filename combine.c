@@ -15,7 +15,7 @@ len1 = strlen(s1);
 len2 = strlen(s2);
 nString = malloc(sizeof(char) * (len1 + len2 + 2));
 if (!nString)
-return (NULL);
+	return (NULL);
 t = 0;
 while (t < len1)
 {
