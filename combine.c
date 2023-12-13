@@ -7,28 +7,28 @@
  */
 char *_combine_path(const char *s1, const char *s2)
 {
-size_t len1, len2;
-size_t t;
-char *nString;
+	size_t len1, len2;
+	size_t iterator;
+	char *new_string;
 
-len1 = strlen(s1);
-len2 = strlen(s2);
-nString = malloc(sizeof(char) * (len1 + len2 + 2));
-if (!nString)
-	return (NULL);
-t = 0;
-while (t < len1)
-{
-nString[t] = s1[t];
-t++;
-}
-nString[t] = '/';
-t++;
-while (t - len1 - 1 < len2)
-{
-nString[t] = s2[t - len1 - 1];
-t++;
-}
-nString[t] = 0;
-return (nString);
+	len1 = strlen(s1);
+	len2 = strlen(s2);
+	new_string = malloc(sizeof(char) * (len1 + len2 + 2));
+	if (!new_string)
+		return (NULL);
+	iterator = 0;
+	while (iterator < len1)
+	{
+		new_string[iterator] = s1[iterator];
+		iterator++;
+	}
+	new_string[iterator] = '/';
+	iterator++;
+	while (iterator - len1 - 1 < len2)
+	{
+		new_string[iterator] = s2[iterator - len1 - 1];
+		iterator++;
+	}
+	new_string[iterator] = 0;
+	return (new_string);
 }

@@ -5,15 +5,15 @@
  */
 char *find_path()
 {
-int i = 0;
-char *p = "PATH=";
-int lenp = strlen(p);
+	int i = 0;
+	char *p = "PATH=";
+	int lenp = strlen(p);
 
-while (environ[i] != NULL)
-{
-if (strncmp(environ[i], p, lenp) == 0)
-return (environ[i] + lenp);
-i++;
-}
-return (0);
+	while (environ[i] != NULL)
+	{
+		if (strncmp(environ[i], p, lenp) == 0)
+			return (environ[i] + lenp);
+	i++;
+	}
+	return (0);
 }
